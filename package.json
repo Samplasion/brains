@@ -1,0 +1,27 @@
+{
+  "name": "brains-api",
+  "version": "1.0.0",
+  "description": "An API that generates the \"Brain\" meme image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samplasion/brains.git"
+  },
+  "keywords": [
+    "brain",
+    "brains",
+    "api"
+  ],
+  "author": "Samplasion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samplasion/brains/issues"
+  },
+  "homepage": "https://github.com/Samplasion/brains#readme",
+  "dependencies": {
+    "jimp": "git://github.com/oliver-moran/jimp"
+  }
+}
