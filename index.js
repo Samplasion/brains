@@ -23,7 +23,7 @@ module.exports = class BrainMeme {
   async build() {
     // 176x39 (176x78)
     let y = [24, 147, 272, 391, 544, 703, 868, 1083, 1316, 1505]
-    let image = await Jimp.read(`./templates/${this.strings.length}.jpg`)
+    let image = await Jimp.read(`/templates/${this.strings.length}.jpg`)
     let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK)
     this.strings.forEach((s, i) => {
       image.print(font, 0, y[i], {
