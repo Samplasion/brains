@@ -1,6 +1,6 @@
 {
   "name": "brains-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An API that generates the \"Brain\" meme image",
   "main": "index.js",
   "scripts": {
