@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Samplasion/brains#readme",
   "dependencies": {
-    "jimp": "git://github.com/oliver-moran/jimp"
+    "jimp": "^0.5.6"
   }
 }

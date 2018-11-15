@@ -13,18 +13,23 @@ module.exports = class BrainMeme {
 
   addString(str) {
     this.strings.push(str)
-    check()
+    this.check()
+    return this
   }
 
+  /**
+   * @return Promise<Buffer> The buffer of the image
+   */
   async build() {
     // 176x39 (176x78)
     let y = [24, 147, 272, 391, 544, 703, 868, 1083, 1316, 1505]
     let image = await Jimp.read(`./templates/${this.strings.length}.jpg`)
-    let font = await Jimp.loadFont(Jimp.FONT_SANS_16_WHITE)
+    let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK)
     this.strings.forEach((s, i) => {
       image.print(font, 0, y[i], {
       	text: s,
-      	alignmentX: jimp.HORIZONTAL_ALIGN_CENTER
+      	alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+        alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
       }, 176, 85);
     })
     let res = await image.getBufferAsync(Jimp.MIME_JPEG)
