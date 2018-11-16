@@ -1,11 +1,11 @@
-# brains
+# brains-api
 An API that generates the ["Expanding Brain"](https://knowyourmeme.com/memes/expanding-brain) meme image
 
 # API
 
 ```js
 // Import
-const BrainMeme = require('brain-api');
+const BrainMeme = require('brains-api');
 
 // OPTIONAL for saving the Buffer onto the hard drive
 const fs = require('fs');
