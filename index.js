@@ -4,7 +4,7 @@ const imgs = [null, null, "https://cdn.discordapp.com/attachments/48513669090666
 /**
  * The "Expanding Brain" meme object
  */
-module.exports = class BrainMeme {
+class BrainMeme {
 
   /**
    * Creates a new "Expanding Brain" meme object
@@ -23,7 +23,7 @@ module.exports = class BrainMeme {
 
   /**
    * Removes the strings whose indexes are ≥11
-   * @returns void Nothing - this doesn't return anything
+   * @returns {void} Nothing - this doesn't return anything
    */
   check() {
     if (this.strings.length > 10) this.strings.length = 10
@@ -32,7 +32,7 @@ module.exports = class BrainMeme {
   /**
    * Addsa string to the meme object.
    * @param {string} strings - The string to add
-   * @return BrainMeme The meme object
+   * @return {BrainMeme} The meme object
    */
   addString(str) {
     this.strings.push(str)
@@ -43,7 +43,7 @@ module.exports = class BrainMeme {
   /**
    * Adds multiple strings to the meme object. Like BrainMeme#addString
    * @param {string[]} strings - The array of strings to add
-   * @return BrainMeme The meme object
+   * @return {BrainMeme} The meme object
    */
   addStrings(str) {
     this.strings.push(...str)
@@ -53,7 +53,7 @@ module.exports = class BrainMeme {
 
   /**
    * Generates the Buffer to be used in other contexts
-   * @return Promise<Buffer> The buffer of the image
+   * @return {Promise<Buffer>} The buffer of the image
    */
   async build() {
     // 176x39 (176x78)
@@ -71,3 +71,5 @@ module.exports = class BrainMeme {
     return res
   }
 }
+
+module.exports = BrainMeme
