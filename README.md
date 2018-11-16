@@ -1,15 +1,34 @@
 # brains
-Small [Vanilla JS](http://vanilla-js.com/) app which generates [Expanding Brain](http://knowyourmeme.com/memes/expanding-brain) meme.
+An API that generates the ["Expanding Brain"](https://knowyourmeme.com/memes/expanding-brain) meme image
 
-## [mat3e.github.io/brains](https://mat3e.github.io/brains/)
+# API
 
-Stack:
+```js
+// Import
+const BrainMeme = require('brain-api');
 
- - [Vanilla JS](http://vanilla-js.com/)
- - [Dragula](https://bevacqua.github.io/dragula/) - drag and drop so simple it hurts
- - HTML5, Canvas API; special thanks to the [JSFiddle](https://jsfiddle.net/AbdiasSoftware/7PRNN/)'s author
- - CSS3, mobile-first approach
- - [Pure.css](http://purecss.io/) - a set of small, responsive CSS modules that you can use in every web project
- - [Font Awesome](http://fontawesome.io/) - the iconic font and CSS toolkit
+// OPTIONAL for saving the Buffer onto the hard drive
+const fs = require('fs');
 
-### [https://9gag.com/gag/aWmy80K](https://9gag.com/gag/aWmy80K)
+// Set the strings
+let strings = ["whom", "whom", "whom'st", "whom'st'd"]
+
+// Create a new instance of the meme
+// (here we use destructuring)
+let meme = new BrainMeme(...strings)
+
+// Add a new string to it
+meme.addString("whom'st'd've")
+
+// Generate the Buffer from the
+// image (it's a PNG buffer)
+meme.build().then(buffer => {
+  var wstream = fs.createWriteStream('./meme.png');
+  wstream.write(buffer)
+  wstream.end()
+})
+```
+
+# Contributing
+
+(I'm looking for a better template (10-images) if you can provide me one, contact me: **Samplasion™*#7901*** on Discord)
