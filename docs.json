@@ -1,0 +1,26 @@
+{
+  "plugins": [],
+  "recurseDepth": 10,
+  "source": {
+      "includePattern": ".+\\.js(doc|x)?$",
+      "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module",
+  "tags": {
+      "allowUnknownTags": true,
+      "dictionaries": ["jsdoc","closure"]
+  },
+  "templates": {
+  	"name": "Brains API",
+  	"footerText": "Brains API by Samplasion",
+  	"default": {
+  	  "outputSourceFiles": false
+  	},
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+  	"template": "node_modules/tui-jsdoc-template",
+  	"destination": "docs"
+  }
+}

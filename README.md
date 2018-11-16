@@ -11,7 +11,7 @@ const BrainMeme = require('brains-api');
 const fs = require('fs');
 
 // Set the strings
-let strings = ["whom", "whom", "whom'st", "whom'st'd"]
+let strings = ["who", "whom", "whom'st", "whom'st'd"]
 
 // Create a new instance of the meme
 // (here we use destructuring)
@@ -31,4 +31,4 @@ meme.build().then(buffer => {
 
 # Contributing
 
-(I'm looking for a better template (10-images) if you can provide me one, contact me: **Samplasion™*#7901*** on Discord)
+(I'm looking for a better template (10-images); if you can provide me one, contact me: **Samplasion™_#7901_** on Discord)

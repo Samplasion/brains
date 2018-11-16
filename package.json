@@ -1,10 +1,10 @@
 {
   "name": "brains-api",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "An API that generates the \"Expanding Brain\" meme image",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no\""
+    "test": "jsdoc index.js -r -c docs.json"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/Samplasion/brains#readme",
   "dependencies": {
-    "jimp": "^0.5.6"
+    "jimp": "^0.5.6",
+    "jsdoc": "^3.5.5",
+    "tui-jsdoc-template": "^1.2.2"
   }
 }
