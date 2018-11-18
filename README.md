@@ -1,4 +1,4 @@
-# brains-api
+# Brains API
 An API that generates the ["Expanding Brain"](https://knowyourmeme.com/memes/expanding-brain) meme image
 
 # API
