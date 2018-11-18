@@ -3,6 +3,12 @@ An API that generates the ["Expanding Brain"](https://knowyourmeme.com/memes/exp
 
 # API
 
+## Docs
+
+[You can find the official docs here](https://www.samplasion.th/brains)
+
+## Example
+
 ```js
 // Import
 const BrainMeme = require('brains-api');
@@ -31,4 +37,4 @@ meme.build().then(buffer => {
 
 # Contributing
 
-(I'm looking for a better template (10-images); if you can provide me one, contact me: **Samplasion™_#7901_** on Discord)
+I'm looking for a better template (10-images); if you can provide me one, contact me: **Samplasion™_#7901_** on Discord

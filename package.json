@@ -1,10 +1,10 @@
 {
   "name": "brains-api",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An API that generates the \"Expanding Brain\" meme image",
   "main": "index.js",
   "scripts": {
-    "test": "jsdoc index.js -r -c docs.json"
+    "test": "jsdoc *.js README.md -r -c docs.json"
   },
   "repository": {
     "type": "git",

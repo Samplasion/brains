@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module.exports_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module.exports.html#addString">addString</a></li><li><a href="module.exports.html#addStrings">addStrings</a></li><li><a href="module.exports.html#build">build</a></li><li><a href="module.exports.html#check">check</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="BrainMeme.html">BrainMeme</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BrainMeme_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BrainMeme.html#addString">addString</a></li><li><a href="BrainMeme.html#addStrings">addStrings</a></li><li><a href="BrainMeme.html#build">build</a></li><li><a href="BrainMeme.html#check">check</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -53,6 +53,34 @@
 
     
 
+
+    <section>
+        <article class="readme"><h1>brains-api</h1><p>An API that generates the <a href="https://knowyourmeme.com/memes/expanding-brain">&quot;Expanding Brain&quot;</a> meme image</p>
+<h1>API</h1><h2>Docs</h2><p><a href="https://www.samplasion.th/brains">You can find the official docs here</a></p>
+<h2>Example</h2><pre class="prettyprint source lang-js"><code>// Import
+const BrainMeme = require('brains-api');
+
+// OPTIONAL for saving the Buffer onto the hard drive
+const fs = require('fs');
+
+// Set the strings
+let strings = [&quot;who&quot;, &quot;whom&quot;, &quot;whom'st&quot;, &quot;whom'st'd&quot;]
+
+// Create a new instance of the meme
+// (here we use destructuring)
+let meme = new BrainMeme(...strings)
+
+// Add a new string to it
+meme.addString(&quot;whom'st'd've&quot;)
+
+// Generate the Buffer from the
+// image (it's a PNG buffer)
+meme.build().then(buffer => {
+  var wstream = fs.createWriteStream('./meme.png');
+  wstream.write(buffer)
+  wstream.end()
+})</code></pre><h1>Contributing</h1><p>I'm looking for a better template (10-images); if you can provide me one, contact me: <strong>Samplasion™<em>#7901</em></strong> on Discord</p></article>
+    </section>
 
 
 

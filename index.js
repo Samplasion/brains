@@ -11,7 +11,7 @@ class BrainMeme {
    * @param {...string} strings - The strings to be added to the meme
    */
   constructor(...strs) {
-    // Cut off the excess
+    // Set a maximum of strings to 10
     if (strs.length > 10) strs.length = 10
 
     // If there are too few strings, yell at 'em so
@@ -23,14 +23,13 @@ class BrainMeme {
 
   /**
    * Removes the strings whose indexes are ≥11
-   * @returns {void} Nothing - this doesn't return anything
    */
   check() {
     if (this.strings.length > 10) this.strings.length = 10
   }
 
   /**
-   * Addsa string to the meme object.
+   * Adds a string to the meme object.
    * @param {string} strings - The string to add
    * @return {BrainMeme} The meme object
    */

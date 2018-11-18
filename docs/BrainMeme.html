@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: exports | Brains API</title>
+    <title>Class: BrainMeme | Brains API</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module.exports_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module.exports.html#addString">addString</a></li><li><a href="module.exports.html#addStrings">addStrings</a></li><li><a href="module.exports.html#build">build</a></li><li><a href="module.exports.html#check">check</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="BrainMeme.html">BrainMeme</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BrainMeme_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BrainMeme.html#addString">addString</a></li><li><a href="BrainMeme.html#addStrings">addStrings</a></li><li><a href="BrainMeme.html#build">build</a></li><li><a href="BrainMeme.html#check">check</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -46,7 +46,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">(&hellip;strings)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>BrainMeme<span class="signature">(&hellip;strings)</span><span class="type-signature"></span></h2>
         
             <div class="class-description">The "Expanding Brain" meme object</div>
         
@@ -61,9 +61,9 @@
 
 <dt>
     
-        <h4 class="name" id="exports">
+        <h4 class="name" id="BrainMeme">
             
-                new <span class="type-signature"></span>exports<span class="signature">(&hellip;strings)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>BrainMeme<span class="signature">(&hellip;strings)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -230,7 +230,7 @@
     
         <h4 class="name" id="addString">
             
-                <span class="type-signature"></span>addString<span class="signature">(strings)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>addString<span class="signature">(strings)</span><span class="type-signature"> &rarr; {<a href="BrainMeme.html">BrainMeme</a>}</span>
                 
             
         </h4>
@@ -242,7 +242,7 @@
 
     
     <div class="description">
-        Addsa string to the meme object.
+        Adds a string to the meme object.
     </div>
     
 
@@ -322,8 +322,13 @@
 
 
 
+<span class="param-type"><a href="BrainMeme.html">BrainMeme</a></span>
 
-- BrainMeme The meme object
+
+
+
+
+- The meme object
 
 
 
@@ -380,7 +385,7 @@
     
         <h4 class="name" id="addStrings">
             
-                <span class="type-signature"></span>addStrings<span class="signature">(strings)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>addStrings<span class="signature">(strings)</span><span class="type-signature"> &rarr; {<a href="BrainMeme.html">BrainMeme</a>}</span>
                 
             
         </h4>
@@ -472,8 +477,13 @@
 
 
 
+<span class="param-type"><a href="BrainMeme.html">BrainMeme</a></span>
 
-- BrainMeme The meme object
+
+
+
+
+- The meme object
 
 
 
@@ -530,7 +540,7 @@
     
         <h4 class="name" id="build">
             
-                <span class="type-signature"><span class="icon green">async</span> </span>build<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"><span class="icon green">async</span> </span>build<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Buffer>}</span>
                 
             
         </h4>
@@ -572,8 +582,13 @@
 
 
 
+<span class="param-type">Promise.&lt;Buffer></span>
 
-- Promise<Buffer> The buffer of the image
+
+
+
+
+- The buffer of the image
 
 
 
@@ -665,22 +680,6 @@
     
 
     
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-
-- void Nothing - this doesn't return anything
-
-
-
-
-            
-    </div>
-    
 
     
 
@@ -748,7 +747,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'module.exports_sub'.replace(/"/g, '_');
+        var id = 'BrainMeme_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
