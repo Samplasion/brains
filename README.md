@@ -5,7 +5,7 @@ An API that generates the ["Expanding Brain"](https://knowyourmeme.com/memes/exp
 
 ## Docs
 
-[You can find the official docs here](https://www.samplasion.th/brains)
+[You can find the official docs here](https://www.samplasion.tk/brains)
 
 ## Example
 
