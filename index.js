@@ -8,7 +8,7 @@ class BrainMeme {
 
   /**
    * Creates a new "Expanding Brain" meme object
-   * @param {...string} strings - The strings to be added to the meme
+   * @param {...string} strings - The strings to be added to the meme. Minimum 2. If there are more than 10, the excess will be removed.
    */
   constructor(...strs) {
     // Set a maximum of strings to 10
@@ -40,7 +40,7 @@ class BrainMeme {
   }
 
   /**
-   * Adds multiple strings to the meme object. Like BrainMeme#addString
+   * Adds multiple strings to the meme object. Like {@link BrainMeme#addString}
    * @param {string[]} strings - The array of strings to add
    * @return {BrainMeme} The meme object
    */
