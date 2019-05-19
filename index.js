@@ -1,5 +1,6 @@
-const Jimp = require("jimp")
-const imgs = [null, null, "https://cdn.discordapp.com/attachments/485136690906660864/512857019753955328/2.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857024191791104/3.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857029019172865/4.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857032995635202/5.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857041317003274/6.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857049651216388/7.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857058014527498/8.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857067850301440/9.jpg", "https://cdn.discordapp.com/attachments/485136690906660864/512857068697550852/10.jpg"]
+const { createCanvas, loadImage } = require('canvas');
+const request = require('node-superfetch');
+const img = 'https://cdn.discordapp.com/attachments/562850987144904704/579670265533956151/1qsy1r.png';
 
 /**
  * The "Expanding Brain" meme object
@@ -12,7 +13,7 @@ class BrainMeme {
    */
   constructor(...strs) {
     // Set a maximum of strings to 10
-    if (strs.length > 10) strs.length = 10
+    if (strs.length > 11) strs.length = 11
 
     // If there are too few strings, yell at 'em so
     if (strs.length < 2) throw new RangeError("The minimum number of strings is 2")
@@ -25,7 +26,7 @@ class BrainMeme {
    * Removes the strings whose indexes are ≥11
    */
   check() {
-    if (this.strings.length > 10) this.strings.length = 10
+    if (this.strings.length > 11) this.strings.length = 11
   }
 
   /**
@@ -55,19 +56,26 @@ class BrainMeme {
    * @return {Promise<Buffer>} The buffer of the image
    */
   async build() {
-    // 176x39 (176x78)
-    let y = [24, 147, 272, 391, 544, 703, 868, 1083, 1316, 1505]
-    let image = await Jimp.read(imgs[this.strings.length])
-    let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK)
-    this.strings.forEach((s, i) => {
-      image.print(font, 0, y[i], {
-      	text: s,
-      	alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-        alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
-      }, 176, 85);
+    let y = [0, 195, 376, 565, 753, 918, 1097, 1287, 1497, 1693, 1877];
+    let canvas;
+
+    const { body } = await request.get(image);
+		const data = await loadImage(body);
+
+    if (this.strings.length == 11) {
+      canvas = createCanvas(data.width, data.height);
+    } else {
+      canvas = createCanvas(data.width, y[this.strings.length -1] - 2)
+    }
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.font = "30px Arial";
+    this.strings.forEach((text, index) => {
+      ctx.fillText(text, 10, y[i] + 20);
     })
-    let res = await image.getBufferAsync(Jimp.MIME_PNG)
-    return res
+
+    return canvas
   }
 }
 
