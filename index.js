@@ -1,6 +1,6 @@
 const { createCanvas, loadImage } = require('canvas');
 const request = require('node-superfetch');
-const img = 'https://cdn.discordapp.com/attachments/562850987144904704/579670265533956151/1qsy1r.png';
+const image = 'https://cdn.discordapp.com/attachments/562850987144904704/579670265533956151/1qsy1r.png';
 
 /**
  * The "Expanding Brain" meme object
@@ -65,17 +65,18 @@ class BrainMeme {
     if (this.strings.length == 11) {
       canvas = createCanvas(data.width, data.height);
     } else {
-      canvas = createCanvas(data.width, y[this.strings.length -1] - 2)
+      canvas = createCanvas(data.width, y[this.strings.length] - 2)
     }
 
     const ctx = canvas.getContext('2d');
+    ctx.drawImage(data, 0, 0, data.width, data.height);
 
     ctx.font = "30px Arial";
     this.strings.forEach((text, index) => {
-      ctx.fillText(text, 10, y[i] + 20);
+      ctx.fillText(text, 10, y[index] + 40);
     })
 
-    return canvas
+    return canvas.toBuffer()
   }
 }
 
